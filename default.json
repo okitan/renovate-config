@@ -1,0 +1,24 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dependencyDashboard": true,
+  "timezone": "Asia/Tokyo",
+  "extends": [
+    "config:base",
+    "npm:unpublishSafe",
+    ":automergeMinor",
+    ":maintainLockFilesWeekly"
+  ],
+  "prCreation": "not-pending",
+  "prConcurrentLimit": 0,
+  "labels": [
+    "renovate"
+  ],
+  "postUpdateOptions": [
+    "gomodTidy",
+    "npmDedupe"
+  ],
+  "supportPolicy": [
+    "lts"
+  ],
+  "transitiveRemediation": true
+}
