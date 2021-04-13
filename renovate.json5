@@ -39,7 +39,7 @@
     // https://docs.renovatebot.com/presets-default/#automergeminor
     ":automergeMinor",
     //https://docs.renovatebot.com/presets-default/#maintainlockfilesweekly
-    "maintainLockFilesWeekly",
+    ":maintainLockFilesWeekly",
   ],
   /*
     overide "config:base"
