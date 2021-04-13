@@ -1,0 +1,61 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  // https://docs.renovatebot.com/configuration-options/#dependencydashboard
+  dependencyDashboard: true,
+  // https://docs.renovatebot.com/configuration-options/#timezone
+  timezone: "Asia/Tokyo",
+
+  extends: [
+    /*
+      "config:base" https://docs.renovatebot.com/presets-config/
+        - https://docs.renovatebot.com/configuration-options/#separatemajorminor
+        - :combinePatchMinorReleases https://docs.renovatebot.com/configuration-options/#separateminorpatch => false
+        - https://docs.renovatebot.com/configuration-options/#ignoreunstable
+        - :prImmediately https://docs.renovatebot.com/configuration-options/#prcreation => "immediate"
+        - https://docs.renovatebot.com/presets-default/#semanticprefixfixdepschoreothers
+        - https://docs.renovatebot.com/configuration-options/#updatenotscheduled
+        - https://docs.renovatebot.com/configuration-options/#automerge
+        - https://docs.renovatebot.com/presets-default/#ignoremodulesandtests
+        - :autoDetectPinVersion https://docs.renovatebot.com/configuration-options/#rangestrategy => "auto"
+            - npm: https://github.com/renovatebot/renovate/blob/master/lib/manager/npm/range.ts#L25-L43
+              - dependencies: app => pin / library => replace
+                - app or library https://github.com/renovatebot/renovate/blob/master/lib/manager/npm/extract/index.ts#L74-L76 => https://github.com/renovatebot/renovate/blob/master/lib/manager/npm/extract/type.ts
+                    - private: true or no main defined ? app : library
+              - devDependencies => pin
+              - peerDependencies => widen
+            - bundler: https://github.com/renovatebot/renovate/blob/master/lib/manager/bundler/range.ts
+              - replace
+        - :prHourlyLimit2 https://docs.renovatebot.com/configuration-options/#prhourlylimit => 2
+        - :prConcurrentLimit20 https://docs.renovatebot.com/configuration-options/#prconcurrentlimit => 20
+        - https://docs.renovatebot.com/presets-group/#groupmonorepos
+        - https://docs.renovatebot.com/presets-group/#grouprecommended
+        - https://docs.renovatebot.com/presets-helpers/#helpersdisabletypesnodemajor
+        - https://docs.renovatebot.com/presets-workarounds/
+     */
+    "config:base",
+
+    // https://docs.renovatebot.com/presets-npm/#npmunpublishsafe
+    "npm:unpublishSafe",
+    // https://docs.renovatebot.com/presets-default/#automergeminor
+    ":automergeMinor",
+    //https://docs.renovatebot.com/presets-default/#maintainlockfilesweekly
+    "maintainLockFilesWeekly",
+  ],
+  /*
+    overide "config:base"
+  */
+  prCreation: "not-pending", // wait for stability-days check
+  prConcurrentLimit: 0, // no limits
+
+  // https://docs.renovatebot.com/configuration-options/#labels
+  labels: ["renovate"],
+
+  // https://docs.renovatebot.com/configuration-options/#postupdateoptions
+  postUpdateOptions: ["gomodTidy", "npmDedupe"],
+
+  // https://docs.renovatebot.com/configuration-options/#supportpolicy
+  supportPolicy: ["lts"],
+
+  // https://docs.renovatebot.com/configuration-options/#transitiveremediation
+  transitiveRemediation: true,
+}
