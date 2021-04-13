@@ -1,0 +1,27 @@
+name: build
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 14
+      - run: npm install
+      - run: npm run build
+      - name: push
+        run: |
+          if [[ -n "$(git status --porcelain default.json)" ]]; then
+            git config user.name okitan
+            git config user.email okitakunio@gmail.com
+
+            git add -A default.json
+            git commit -m "[skip ci] :innocent: update default.json"
+            git push
+          fi

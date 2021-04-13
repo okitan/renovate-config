@@ -1,9 +1,11 @@
 {
   "private": true,
   "scripts": {
-    "check": "renovate-config-validator"
+    "check": "renovate-config-validator",
+    "build": "./convert.js"
   },
   "devDependencies": {
+    "json5": "2.2.0",
     "renovate": "24.114.1"
   }
 }
