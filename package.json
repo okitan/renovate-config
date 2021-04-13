@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "scripts": {
+    "check": "renovate-config-validator"
+  },
+  "devDependencies": {
+    "renovate": "24.114.1"
+  }
+}
