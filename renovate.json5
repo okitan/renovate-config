@@ -58,4 +58,9 @@
 
   // https://docs.renovatebot.com/configuration-options/#transitiveremediation
   transitiveRemediation: true,
+
+  // https://docs.renovatebot.com/configuration-options/#constraints
+  constraints: {
+    npm: ">= 7.0.0",
+  },
 }
