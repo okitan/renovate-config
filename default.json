@@ -20,5 +20,8 @@
   "supportPolicy": [
     "lts"
   ],
-  "transitiveRemediation": true
+  "transitiveRemediation": true,
+  "constraints": {
+    "npm": ">= 7.0.0"
+  }
 }
