@@ -6,6 +6,6 @@
   },
   "devDependencies": {
     "json5": "2.2.2",
-    "renovate": "34.60.0"
+    "renovate": "34.62.1"
   }
 }
