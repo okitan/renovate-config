@@ -5,7 +5,7 @@
     "build": "./convert.js"
   },
   "devDependencies": {
-    "json5": "2.2.2",
+    "json5": "2.2.3",
     "renovate": "34.77.0"
   }
 }
