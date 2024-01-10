@@ -3,7 +3,7 @@
   "dependencyDashboard": true,
   "timezone": "Asia/Tokyo",
   "extends": [
-    "config:base",
+    "config:recommended",
     "npm:unpublishSafe",
     ":automergeMinor",
     ":maintainLockFilesWeekly"
@@ -17,11 +17,5 @@
     "gomodTidy",
     "npmDedupe"
   ],
-  "supportPolicy": [
-    "lts"
-  ],
-  "transitiveRemediation": true,
-  "constraints": {
-    "npm": ">= 7.0.0"
-  }
+  "transitiveRemediation": true
 }
