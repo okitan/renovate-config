@@ -32,7 +32,7 @@
         - https://docs.renovatebot.com/presets-helpers/#helpersdisabletypesnodemajor
         - https://docs.renovatebot.com/presets-workarounds/
      */
-    "config:base",
+    "config:recommended",
 
     // https://docs.renovatebot.com/presets-npm/#npmunpublishsafe
     "npm:unpublishSafe",
@@ -53,14 +53,6 @@
   // https://docs.renovatebot.com/configuration-options/#postupdateoptions
   postUpdateOptions: ["gomodTidy", "npmDedupe"],
 
-  // https://docs.renovatebot.com/configuration-options/#supportpolicy
-  supportPolicy: ["lts"],
-
   // https://docs.renovatebot.com/configuration-options/#transitiveremediation
   transitiveRemediation: true,
-
-  // https://docs.renovatebot.com/configuration-options/#constraints
-  constraints: {
-    npm: ">= 7.0.0",
-  },
 }
